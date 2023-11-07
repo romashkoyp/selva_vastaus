@@ -1,4 +1,5 @@
-# Selvä vastaus (Clear answer)
+# Selvä vastaus
+"Selvä vastaus", which means "Clear answer", is a service for individuals interested in studying the Finnish language. Here, you can discover Finnish words that are often difficult to find elsewhere. I created it for my own purposes because I am simultaneously studying Finnish and IT. This website is my final project for the "CS50's Introduction to Computer Science" free course at Harvard University. When I study Finnish grammar, I need to know word endings every time. Understanding how Finnish words can flex in different cases is crucial. I am open to your suggestions and recommendations to improve the website. You can contact me by email at romashkoyp(a)gmail.com
 ### Video Demo:  <https://youtu.be/EX3DdnMBRFY>
 ### Description, app.py
 This documentation covers the Flask web application designed for managing a database of words. It provides an interface for users to interact with the `words.db` SQLite database and perform various operations based on Finnish linguistic features.
