@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Selvä vastaus
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <form method="POST" action="/">
+            <div class="row row-cols-lg g-2 justify-content-center align-items-center">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <select name="part_sp" class="form-select my-transparent-input" id="floatingSelectGrid1" required>
+                            <option value="all" {% if part == "all" %} selected="selected" {% endif %}>All parts of speech</option>
+                            <option value="substantiivi" {% if part == "substantiivi" %} selected="selected" {% endif %}>Noun</option>
+                            <option value="adjektiivi" {% if part == "adjektiivi" %} selected="selected" {% endif %}>Adjective</option>
+                            <option value="verbi" {% if part == "verbi" %} selected="selected" {% endif %}>Verb</option>
+                        </select>
+                        <label for="floatingSelectGrid1">Part of speech</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <select name="case" class="form-select my-transparent-input" id="floatingSelectGrid2" required>
+                            <option value="all" {% if case == "all" %} selected="selected" {% endif %}>All words</option>
+                            <option value="short" {% if case == "short" %} selected="selected" {% endif %}>Short words</option>
+                            <option value="long" {% if case == "long" %} selected="selected" {% endif %}>Long words</option>
+                            <option value="old" {% if case == "old" %} selected="selected" {% endif %}>Old i-words (like kivi)</option>
+                            <option value="new" {% if case == "new" %} selected="selected" {% endif %}>New i-words (like bussi)</option>
+                            <option value="hauska" {% if case == "hauska" %} selected="selected" {% endif %}>a…a, e…a, i…a (like hauska)</option>
+                            <option value="koira" {% if case == "koira" %} selected="selected" {% endif %}>o…a, u…a (like koira)</option>
+                        </select>
+                        <label for="floatingSelectGrid2">Special cases</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input name="ending" type="text" class="form-control my-transparent-input" id="floatingInputGrid1" placeholder="Type endings or words, use comma" value="{{ ending | default('') }}">
+                        <label for="floatingInputGrid1">Type endings or words, use comma</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input name="word_quantity" type="number" min="1" max="500" class="form-control my-transparent-input" id="floatingInputGrid2" placeholder="Word Quantity for Display" value="{{ word_quantity | default(30) }}" required>
+                        <label for="floatingInputGrid2">Word Quantity for Display</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="col-md">
+                        <button type="submit" class="btn btn-custom">
+                            <svg class="custom-svg" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    {% if request.method == 'GET' %}
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <div class="card text-bg mb-3">
+                        <div class="card-body">
+                            <h2 class="h4">What is this about</h2>
+                            <p class="card-text"><strong>"Selvä vastaus"</strong> (Clear answer) is a service for individuals interested in studying the Finnish language. In the Finnish language, it is important to know word endings because words change based on their ending-group. This website helps you establish these groups, and find Finnish words that might be hard to locate on other websites. For instance, you can:</p>
+                            <p class="card-text"> — access the most popular words categorized by part of speech</p>
+                            <p class="card-text"> — check whether a word ends with -i (new) or -i (old)</p>
+                            <p class="card-text"> — determine if a word is long or short</p>
+                            <p class="card-text"> — look for similar short words like a…a, e…a, i…a (hauska) or o…a, u…a (koira)</p>
+                            <p class="card-text"> — create your own custom search criteria for finding specific words you need (ChatGPT, Google Bard, and LLaMA may not be able to handle such customized searches)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <div class="card text-bg mb-3">
+                        <div class="card-body">
+                            <h2 class="h4">How to use it</h2>
+                            <p class="card-text"><strong>Look for similar words by their endings.</strong> To find words like "mahtava" (a long adjective with the -va/vä ending), select "adjective", "long words", type "va,vä" in the middle field, and then click the search button.</p>
+                            <p class="card-text"><strong>Search for a specific word you need.</strong> To determine if "äiti" is a new or old -i word, choose "noun", "new -i words", type "äiti", and press the search button. You will find this word at the top of the list of new -i words. Just as you can check multiple words with a single query.</p>
+                            <p class="card-text"><strong>Search results.</strong> Regardless of the search criteria, the results will be sorted by the "Top Words" column, with nominative form "Word" column and without duplicates. The provided translations are approximate; it is recommended to verify the word in a professional vocabulary (you can find links in the sanakirja.fi and kieli.net columns for each word).</p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    {% endif %}
+
+    {% if total_count == 0 %}
+        <div class="centered-container-2">
+            <h2 class="h2">No result</h2>
+            <p class="text">No words have been found that match your search condition</p>
+            <p class="text"></p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-emoji-neutral" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M4 10.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7a.5.5 0 0 0-.5.5zm3-4C7 5.672 6.552 5 6 5s-1 .672-1 1.5S5.448 8 6 8s1-.672 1-1.5zm4 0c0-.828-.448-1.5-1-1.5s-1 .672-1 1.5S9.448 8 10 8s1-.672 1-1.5z"/>
+            </svg>
+        </div>
+    {% endif %}
+
+    {% if words %}
+        <div class="container-result">
+            <h2 class="h3">Search result</h2>
+            <p>Found {{ total_count }} Finnish {% if total_count > 1 %} words {% else %} word {% endif %}</p>
+            <table class="table table-hover table-shadow rounded-3 overflow-hidden">
+                <thead class="table-dark">
+                    <tr>
+                        <th>
+                            <div data-toggle="tooltip" title="Word Quantuty For Display">#</div>
+                        </th>
+                        <th>Word</th>
+                        <th>
+                            <div data-toggle="tooltip" title="Basic translation from Finnish to English">Translation</div>
+                        </th>
+                        <th>Part of Speech</th>
+                        <th>
+                            <div data-toggle="tooltip" title="The most frequent words in written Finnish. The result is always sorted by this column.">Top Words</div>
+                        </th>
+                        <th>
+                            <div data-toggle="tooltip" title="The best for translation and examples of word usage">Sanakirja.fi</div>
+                        </th>
+                        <th>
+                            <div data-toggle="tooltip" title="The best for word forms">Kieli.net</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    {% for word in words %}
+                    <tr>
+                        <td>{{ word.row_number }}</td>
+                        <td>{{ word.word }}</td>
+                        <td>{{ word.translation }}</td>
+                        <td>{{ word.type }}</td>
+                        <td>{{ word.number }}</td>
+                        <td><a target="_blank" href="https://www.sanakirja.fi/finnish-english/{{ word.word }}">check</a></td>
+                        <td><a target="_blank" href="https://kieli.net/sana/{{ word.word }}">check</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+{% endblock %}

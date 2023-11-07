@@ -1,0 +1,241 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block main %}
+    <div class="container-result">
+        <div class="col">
+            <div class="card text-bg mb-3">
+                <div class="card-body">
+                    <h2 class="h5">About this website</h2>
+                    <p class="card-text"><strong>"Selvä vastaus"</strong>, which means "Clear answer", is a service for individuals interested in studying the Finnish language. Here, you can discover Finnish words that are often difficult to find elsewhere.</p>
+                    <p class="card-text">I created it for my own purposes because I am simultaneously studying Finnish and IT. This website is my final project for the "CS50's Introduction to Computer Science" free course at Harvard University.</p>
+                    <p class="card-text">When I study Finnish grammar, I need to know word endings every time. Understanding how Finnish words can flex in different cases is crucial. For instance, take a look at the table below.</p>
+                    <p class="card-text">I am open to your suggestions and recommendations to improve the website. You can contact me by email at romashkoyp(a)gmail.com</p>
+                        <p class="d-inline-flex gap-1">
+                            <a class="btn btn-secondary" data-bs-toggle="collapse" href="#tableCollapse" role="button" aria-expanded="false" aria-controls="tableCollapse">Nominative and plural genetive form table</a>
+                        </p>
+                    </p>
+                    <div class="collapse" id="tableCollapse">
+                        <table class="table table-hover table-shadow rounded-3 overflow-hidden">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Word type</th>
+                                    <th>Nominative word form</th>
+                                    <th>Genetive word form (plural)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+                                <tr>
+                                    <td>-nen</td>
+                                    <td>nai<strong>nen</strong></td>
+                                    <td>nai<strong>sten</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-ton/tön</td>
+                                    <td>rasva<strong>ton</strong></td>
+                                    <td>rasva<strong>ttomien</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-in</td>
+                                    <td>vedenkeit<strong>in</strong></td>
+                                    <td>vedenkeit<strong>timien</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-nut/nyt</td>
+                                    <td>väsy<strong>nyt</strong></td>
+                                    <td>väsy<strong>neiden</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-ut/yt</td>
+                                    <td>lyh<strong>yt</strong></td>
+                                    <td>lyh<strong>yiden</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-e</td>
+                                    <td>parvek<strong>e</strong></td>
+                                    <td>parvek<strong>keiden</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>o, ö, u, y</td>
+                                    <td>aut<strong>o</strong></td>
+                                    <td>aut<strong>ojen</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-ä</td>
+                                    <td>kes<strong>ä</strong></td>
+                                    <td>kes<strong>ien</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>a…a, e…a, i…a</td>
+                                    <td>h<strong>a</strong>usk<strong>a</strong></td>
+                                    <td>hausk<strong>ojen</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>o…a, u…a</td>
+                                    <td>k<strong>o</strong>ir<strong>a</strong></td>
+                                    <td>koir<strong>ien</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-is (adjekt.)</td>
+                                    <td>rait<strong>is</strong></td>
+                                    <td>rait<strong>tiiden</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-is (substantiiveja)</td>
+                                    <td>kasv<strong>is</strong></td>
+                                    <td>kasv<strong>iksien</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-us/ys</td>
+                                    <td>kysym<strong>ys</strong></td>
+                                    <td>kysym<strong>yksien</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-os/ös</td>
+                                    <td>kerr<strong>os</strong></td>
+                                    <td>kerr<strong>oksien</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-as/äs</td>
+                                    <td>rik<strong>as</strong></td>
+                                    <td>rik<strong>kaiden</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-i (uudet sanat)</td>
+                                    <td>buss<strong>i</strong></td>
+                                    <td>buss<strong>ien</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-i, -si (vanhat sanat)</td>
+                                    <td>kiv<strong>i</strong></td>
+                                    <td>kiv<strong>ien</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-li, ni, ri (vanhat sanat)</td>
+                                    <td>pien<strong>i</strong></td>
+                                    <td>pien<strong>ten</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-eo, uo, yö</td>
+                                    <td>mus<strong>eo</strong></td>
+                                    <td>mus<strong>eoiden</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>kaksi vokaalia sana</td>
+                                    <td>t<strong>yö</strong></td>
+                                    <td>t<strong>öiden</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-va/vä</td>
+                                    <td>ystä<strong>vä</strong></td>
+                                    <td>ystä<strong>vien</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-ma/mä</td>
+                                    <td>ase<strong>ma</strong></td>
+                                    <td>ase<strong>mien</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-aja/ajä</td>
+                                    <td>opett<strong>aja</strong></td>
+                                    <td>opett<strong>ajien</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-ija/ijä</td>
+                                    <td>opiskel<strong>ija</strong></td>
+                                    <td>opiskel<strong>ijoiden</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-ra/rä (subst.)</td>
+                                    <td>makka<strong>ra</strong></td>
+                                    <td>makka<strong>roiden</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-ra/rä (adjekt.)</td>
+                                    <td>anka<strong>ra</strong></td>
+                                    <td>anka<strong>rien</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-la/lä (subst.)</td>
+                                    <td>ravinto<strong>la</strong></td>
+                                    <td>ravinto<strong>loiden</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-la/lä (adjekt.)</td>
+                                    <td>kama<strong>la</strong></td>
+                                    <td>kama<strong>lien</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-na/nä (subst.)</td>
+                                    <td>porkka<strong>na</strong></td>
+                                    <td>porkka<strong>noiden</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-na/nä (adjekt.)</td>
+                                    <td>iha<strong>na</strong></td>
+                                    <td>iha<strong>nien</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-kka/kkä</td>
+                                    <td>mansi<strong>kka</strong></td>
+                                    <td>mansi<strong>kojen</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-kko/kkö</td>
+                                    <td>laati<strong>kko</strong></td>
+                                    <td>laati<strong>kkojen</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-u</td>
+                                    <td>palvel<strong>u</strong></td>
+                                    <td>palvel<strong>ujen</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-li, ri</td>
+                                    <td>sipu<strong>li</strong></td>
+                                    <td>sipu<strong>lien</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-lo/lö</td>
+                                    <td>varta<strong>lo</strong></td>
+                                    <td>varta<strong>lojen</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>-ro</td>
+                                    <td>nume<strong>ro</strong></td>
+                                    <td>nume<strong>rojen</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="card text-bg mb-3">
+                <div class="card-body">
+                    <h2 class="h5">Source of information</h2>
+                    <p class="card-text">To create a database and verify Finnish words and their types, I used several sources:</p>
+                    <p class="card-text"> — Wikisanakirja - to find all <a target="_blank" href="https://fi.wiktionary.org/wiki/Luokka:Suomen_kielen_substantiivit">nouns</a>, <a target="_blank" href="https://fi.wiktionary.org/wiki/Luokka:Suomen_kielen_verbit">verbs</a>, <a target="_blank" href="https://fi.wiktionary.org/wiki/Luokka:Suomen_kielen_adjektiivit">adjectives</a>, <a target="_blank" href="https://fi.wiktionary.org/wiki/Luokka:Suomen_kielen_yksitavuiset_sanat">monosyllabic</a>, and <a target="_blank" href="https://fi.wiktionary.org/wiki/Luokka:Suomen_kielen_kaksitavuiset_sanat">two-syllable words</a></p>
+                    <p class="card-text"> — kieli.net - to find translations and check specific cases of words</p>
+                    <p class="card-text"> — bab.la - to find translations</p>
+                    <p class="card-text"> — The Language Bank of Finland - to find <a target="_blank" href="https://kaino.kotus.fi/sanat/taajuuslista/parole.php">frequently written words</a> and <a target="_blank" href="https://kaino.kotus.fi/sanat/nykysuomi/">all Finnish words in nominative form</a></p>
+                    <p class="card-text"> — my own algorithms for word validation: old and new i-words, short and long words, h<strong>a</strong>usk<strong>a</strong>- and k<strong>o</strong>ir<strong>a</strong>-type words</p>
+                </div>
+            </div>
+            <div class="card text-bg mb-3">
+                <div class="card-body">
+                    <h2 class="h5">Technical information</h2>
+                    <p class="card-text">This website showcases a web application built with Python, Flask, Jinja, and SQLite for the backend, and HTML, CSS, JavaScript, and Bootstrap for front-end rendering. Basic functions include:</p>
+                    <p class="card-text"> — input validation on both the front-end and server</p>
+                    <p class="card-text"> — retention of user input in the input field during the user's session</p>
+                    <p class="card-text"> — construction of SQL queries by the user based on selected criteria and execution using parameters to fetch word data</p>
+                    <p class="card-text"> — display of search results using HTML templates</p>
+                    <p class="card-text"> — independent handling of GET and POST requests by the website</p>
+                    <p class="card-text"> — the website automatic adaptation to ensure compatibility and optimal layout on both desktop and mobile devices</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
