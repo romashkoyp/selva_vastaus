@@ -30,7 +30,7 @@ def valid_input(input_string):
 The Flask app is configured with a secret key, which is essential for securely managing sessions:
 ```
 app = Flask(__name__)
-app.secret_key = '4hH+C4g*7YAv'
+app.secret_key = '************'
 ```
 ### Database Configuration
 The CS50 library is used to set up an interface with the SQLite database:
